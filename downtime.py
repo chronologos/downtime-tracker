@@ -27,12 +27,9 @@ def str_to_date(timestamp):
 
 def secs_to_HMS(secs):
     """ Convert seconds to second and minuntes 
-    Format : MM:SS 
+    Format : HH:MM:SS 
     """
-    if secs < 3600:
-        return datetime.datetime.fromtimestamp(secs).strftime('%M:%S')
-    else:
-        return datetime.datetime.fromtimestamp(secs).strftime('%H:%M:%S')
+    return str(datetime.timedelta(seconds=secs));
 
 def record_file_exist():
     """ Check if records file exist """
