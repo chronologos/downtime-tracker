@@ -105,4 +105,4 @@ elif args[1] == 'monitor':
         create_record_file()
     monitor_connection(1)
 elif args[1] == 'downtime':
-    print('\nRemained down for : ', get_total_downtime(), ' MM:SS ' )
+    print('\nRemained down for : ', get_total_downtime(), ' HH:MM:SS ' )
