@@ -38,12 +38,12 @@ def secs_to_HMS(secs):
 
 def record_file_exist():
     """ Check if records file exist """
-    return os.path.isfile('data.csv')
+    return os.path.isfile('/home/pi/downtime-tracker/data.csv')
 
 
 def create_record_file():
     """ Create a new record file """
-    with open('data.csv', 'a') as csvfile:
+    with open('/home/pi/downtime-tracker/data.csv', 'a') as csvfile:
         columns = ['timestamp', 'status']
         writer = csv.DictWriter(csvfile, fieldnames=columns)
         writer.writeheader()
@@ -52,7 +52,7 @@ def create_record_file():
 def last_record_status():
     """ Get last record """
     result = None
-    with open('data.csv', 'r') as csvfile:
+    with open('/home/pi/downtime-tracker/data.csv', 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             result = row
@@ -61,7 +61,7 @@ def last_record_status():
 
 def write_record(status):
     """ Create a new record """
-    with open('data.csv', 'a') as csvfile:
+    with open('/home/pi/downtime-tracker/data.csv', 'a') as csvfile:
         columns = ['timestamp', 'status']
         writer = csv.DictWriter(csvfile, fieldnames=columns)
         writer.writerow({'timestamp': str(current_timestamp()), 'status': status})
@@ -72,7 +72,7 @@ def get_total_downtime():
     seconds = 0
     down = None
     up = None
-    with open('data.csv', 'r') as csvfile:
+    with open('/home/pi/downtime-tracker/data.csv', 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         for record in reader:
             try:
