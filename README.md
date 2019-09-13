@@ -1,0 +1,1 @@
+Combination of work from [here](https://gist.github.com/waleedahmad/326ec53f76646dccec299910a7fb4f2b) and [here](http://blog.scphillips.com/posts/2013/07/getting-a-python-script-to-run-in-the-background-as-a-service-on-boot/).
